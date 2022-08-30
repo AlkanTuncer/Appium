@@ -1,9 +1,14 @@
 package appiumTest;
 
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.touch.offset.PointOption;
+import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
@@ -28,6 +33,36 @@ public class C01_AppiumTest {
 
         AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),desiredCapabilities);
 
+        WebElement getStarted = driver.findElement(By.id("com.duolingo:id/introFlowNewUserButton"));
+        System.out.println("Get Started Element Text : "+getStarted.getText());
+        getStarted.click();
+
+        WebElement english = driver.findElement(By.xpath("//*[@text=\"English\"]"));
+        english.click();
+
+        TouchAction touchAction = new TouchAction(driver);
+
+
+        WebElement turkish = driver.findElement(By.xpath("//*[@text=\"Turkish\"]"));
+        turkish.click();
+
+        WebElement okButton = driver.findElement(By.id("android:id/button1"));
+        okButton.click();
+
+        WebElement jobOffers = driver.findElement(By.xpath("//android.widget.LinearLayout[@content-desc=\"work\"]/android.widget.TextView"));
+        jobOffers.click();
+
+        WebElement serious = driver.findElement(By.id("com.duolingo:id/xpGoalOptionSerious"));
+        serious.click();
+
+        WebElement continueButton = driver.findElement(By.id("com.duolingo:id/xpGoalContinueButton"));
+        continueButton.click();
+
+        WebElement aLittleBit = driver.findElement(By.id("com.duolingo:id/placementHeader"));
+        aLittleBit.click();
+
+        WebElement testeBasla = driver.findElement(By.id("com.duolingo:id/primaryButton"));
+        Assert.assertTrue(testeBasla.isDisplayed());
 
     }
 
