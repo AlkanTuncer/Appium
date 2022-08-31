@@ -26,6 +26,7 @@ public class C01_AppiumTest {
         // cmd'ye emulator -list-avds => cihaz ismini bu kod sayesinde buluruz.
         desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10.0");
         // cmd'ye adb shell getprop ro.build.version.release => version bulmak için
+        // cmd'ye adb shell  settings get secure android_id => cihaz id'si için
         desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
         desiredCapabilities.setCapability(MobileCapabilityType.APP,"C:\\Users\\alkan\\IdeaProjects\\Appium\\src\\app\\Duolingo.apk");
 
