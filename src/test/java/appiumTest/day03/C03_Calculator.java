@@ -26,13 +26,26 @@ public class C03_Calculator {
         AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), desiredCapabilities);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-        WebElement menuButton = driver.findElement(By.xpath("//android.widget.TextView[@content-desc=\"Apps\"]"));
+        WebElement menuButton = driver.findElementByAccessibilityId("Apps");
         menuButton.click();
 
         WebElement calculator = driver.findElementByAccessibilityId("Calculator");
         calculator.click();
 
+        WebElement eight = driver.findElement(By.id("com.android.calculator2:id/digit_8"));
+        eight.click();
 
+        WebElement multiply = driver.findElementByAccessibilityId("multiply");
+        multiply.click();
+
+        WebElement seven = driver.findElement(By.id("com.android.calculator2:id/digit_7"));
+        seven.click();
+
+        WebElement equals = driver.findElementByAccessibilityId("equals");
+        equals.click();
+
+        WebElement result = driver.findElement(By.id("com.android.calculator2:id/result"));
+        System.out.println("Result = "+result.getText());
 
     }
 }
