@@ -52,17 +52,26 @@ public class C01_AppiumTest {
         WebElement okButton = driver.findElement(By.id("android:id/button1"));
         okButton.click();
 
-        WebElement jobOffers = driver.findElement(By.xpath("//android.widget.LinearLayout[@content-desc=\"work\"]/android.widget.TextView"));
-        jobOffers.click();
+        try {
+            Thread.sleep(3000);
+            WebElement jobOffers = driver.findElement(By.xpath("//android.widget.LinearLayout[@content-desc=\"work\"]"));
+            jobOffers.click();
 
-        WebElement serious = driver.findElement(By.id("com.duolingo:id/xpGoalOptionSerious"));
-        serious.click();
+            Thread.sleep(3000);
+            WebElement serious = driver.findElement(By.id("com.duolingo:id/xpGoalOptionSerious"));
+            serious.click();
 
-        WebElement continueButton = driver.findElement(By.id("com.duolingo:id/xpGoalContinueButton"));
-        continueButton.click();
+            Thread.sleep(3000);
+            WebElement continueButton = driver.findElement(By.id("com.duolingo:id/xpGoalContinueButton"));
+            continueButton.click();
 
-        WebElement aLittleBit = driver.findElement(By.id("com.duolingo:id/placementHeader"));
-        aLittleBit.click();
+            Thread.sleep(3000);
+            WebElement aLittleBit = driver.findElement(By.id("com.duolingo:id/placementHeader"));
+            aLittleBit.click();
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         WebElement testeBasla = driver.findElement(By.id("com.duolingo:id/primaryButton"));
         Assert.assertTrue(testeBasla.isDisplayed());
