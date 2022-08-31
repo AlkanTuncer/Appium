@@ -26,6 +26,8 @@ public class C03_Calculator {
         AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), desiredCapabilities);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
+        // Go to Calculator and do -> 8 x 7 = 56 and write result to console
+
         WebElement menuButton = driver.findElementByAccessibilityId("Apps");
         menuButton.click();
 
