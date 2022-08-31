@@ -37,12 +37,10 @@ public class C01_APIDemos {
     5. People Names'e tıklayıp isimleri alıyoruz
  */
 
-        WebElement views = driver.findElement(By.xpath("\t\n" +
-                "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[12]"));
+        WebElement views = driver.findElementByAccessibilityId("Views");
         views.click();
 
-        WebElement expandableLists = driver.findElement(By.xpath("\t\n" +
-                "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[9]"));
+        WebElement expandableLists = driver.findElementByAccessibilityId("Expandable Lists");
         expandableLists.click();
 
         WebElement customAdapter = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[1]"));
