@@ -41,7 +41,10 @@ public class C01_AppiumTest {
         english.click();
 
         TouchAction touchAction = new TouchAction(driver);
-
+        touchAction.longPress(PointOption.point(881, 1870))
+                .moveTo(PointOption.point(874, 230))
+                .release()
+                .perform();
 
         WebElement turkish = driver.findElement(By.xpath("//*[@text=\"Turkish\"]"));
         turkish.click();
