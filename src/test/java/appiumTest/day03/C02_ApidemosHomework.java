@@ -42,16 +42,10 @@ public class C02_ApidemosHomework {
         driver.findElementByAccessibilityId("Preference").click();
         driver.findElementByAccessibilityId("3. Preference dependencies").click();
         driver.findElement(By.id("android:id/checkbox")).click();
-        driver.findElement(By.xpath("\t\n" +
-                "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget." +
-                "LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[2]" +
-                "/android.widget.RelativeLayout")).click();
+        driver.findElement(By.xpath("//*[@text=\"WiFi settings\"]")).click();
         driver.findElement(By.id("android:id/edit")).sendKeys("Appium çok güzel");
         driver.findElement(By.id("android:id/button1")).click();
-        driver.findElement(By.xpath("\t\n" +
-                "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget." +
-                "LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[2]" +
-                "/android.widget.RelativeLayout")).click();
+        driver.findElement(By.xpath("//*[@text=\"WiFi settings\"]")).click();
 
         WebElement textBox = driver.findElement(By.id("android:id/edit"));
         Assert.assertEquals("Appium çok güzel", textBox.getText());
