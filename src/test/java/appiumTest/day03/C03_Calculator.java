@@ -3,6 +3,7 @@ package appiumTest.day03;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -85,5 +86,7 @@ public class C03_Calculator {
 
         WebElement result = driver.findElement(By.id("com.android.calculator2:id/result"));
         System.out.println("Result = "+result.getText());
+
+        Assert.assertEquals("56", result.getText());
     }
 }
