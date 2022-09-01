@@ -26,6 +26,7 @@ public class C03_Calculator {
         // desiredCapabilities.setCapability("appPackage","com.android.calculator2");
         // desiredCapabilities.setCapability("appPackage","com.android.calculator2.Calculator");
         // Bu kodlar ile testimiz direkt olarak hesap makinesinden baslar.
+        // cmd'de adb shell ile device içine girilir ve dumpsys window windows | grep -E 'mCurrentFocus' ile app bilgilerine ulasılır.
 
         AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), desiredCapabilities);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
